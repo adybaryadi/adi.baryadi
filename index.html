@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baryadi | Administration Staff</title>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text: #333;
+      --container-bg: white;
+      --header-footer-bg: transparent;
+      --card-bg: #ecf0f1;
+      --link: #2980b9;
+      --heading: #2c3e50;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --container-bg: #1e1e1e;
+      --header-footer-bg: #222;
+      --card-bg: #2c2c2c;
+      --link: #80cbc4;
+      --heading: #bb86fc;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-footer-bg);
+      color: var(--heading);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dark footer {
+      background-color: #1a1a1a;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--heading);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+      background-color: var(--container-bg);
+      transition: background 0.3s;
+    }
+
+    h1, h2, h3 {
+      color: var(--heading);
+      margin-bottom: 10px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .profile img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
+    .skills, .technical, .experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .gallery img, .profile img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .card {
+        font-size: 0.95rem;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      header, footer, .gallery, .links, .toggle-btn {
+        display: none;
+      }
+
+      .container {
+        background-color: white;
+        color: black;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .card {
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Baryadi</h1>
+    <h3>Administration Staff</h3>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
+  </header>
+
+  <div class="container">
+    <!-- Profile -->
+    <section class="section">
+      <div class="profile">
+        <img src="images/Profil.jpeg" alt="Profile Picture">
+        <div>
+          <h2>Profile</h2>
+          <p>Financial Administration Staff for approximately 10 years at PT BIMARUNA JAYA, mastering JAVA, Gsabis and SAP programs. Proficient in MS Office.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery">
+      <h2>Gallery Kegiatan</h2>
+      <div class="gallery">
+        <img src="images/Kerja1.jpeg" alt="Kerja 1">
+        <img src="images/Kegiatan2.jpeg" alt="Kegiatan 2">
+        <img src="images/Dikantor.jpeg" alt="Di Kantor">
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Data Entry</h3>
+          <p>Input data into Gsabis and SAP programs</p>
+        </div>
+        <div class="card">
+          <h3>Monthly Report</h3>
+          <p>Create monthly expense reports</p>
+        </div>
+        <div class="card">
+          <h3>System Improvement</h3>
+          <p>Participated in GSABIS and SAP program improvement</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical -->
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="technical">
+        <div class="card"><strong>XHTML</strong></div>
+        <div class="card"><strong>CSS</strong></div>
+        <div class="card"><strong>JavaScript</strong></div>
+        <div class="card"><strong>Gsabis</strong></div>
+        <div class="card"><strong>SAP</strong></div>
+        <div class="card"><strong>JAVA</strong></div>
+        <div class="card"><strong>OS X</strong></div>
+        <div class="card"><strong>Windows XP/Vista</strong></div>
+        <div class="card"><strong>Linux</strong></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="experience">
+        <div class="card">
+          <h3><a href="https://www.korindo-brj.com/" target="_blank">PT BIMARUNA JAYA</a></h3>
+          <p><strong>Financial Administration</strong> (2015–Now)</p>
+          <p>Data entry for expenditures using GSABIS and SAP</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://pt-kcb.co.id/" target="_blank">PT KENCANA CAKRA BUANA</a></h3>
+          <p><strong>HSE Officer</strong> (2012–2015)</p>
+          <p>Handled inspections, training, and safety analysis for K3L</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.multistrada.co.id/" target="_blank">PT MULTISTRADA ARAH SARANA</a></h3>
+          <p><strong>HSE Officer</strong> (2011–2012)</p>
+          <p>Implemented safety programs and SOPs in industrial environments</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2>Education</h2>
+      <p><strong>State Senior High School 1 Prembun</strong> – Science Major</p>
+    </section>
+
+    <!-- Links -->
+    <section class="section links">
+      <h2>Links</h2>
+      <p><a href="https://x.com/ady_baryadi" target="_blank">Twitter: @ady_baryadi</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Email: <a href="mailto:ady.baryadi@gmail.com" style="color:#ecf0f1;">ady.baryadi@gmail.com</a> | Phone: (62) 8990900380</p>
+    <p>&copy; Baryadi - All rights reserved</p>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.querySelector(".toggle-btn");
+
+    // Load mode from localStorage
+    if (localStorage.getItem("mode") === "dark") {
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️ Light";
+    }
+
+    function toggleMode() {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        localStorage.setItem("mode", "dark");
+        toggleBtn.textContent = "☀️ Light";
+      } else {
+        localStorage.setItem("mode", "light");
+        toggleBtn.textContent = "🌙 Dark";
+      }
+    }
+  </script>
+</body>
+</html>
